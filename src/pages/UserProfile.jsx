@@ -23,7 +23,9 @@ const UserProfile = () => {
     const callProfilePage = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8000/?token=${localStorage.getItem("token")}`
+          `https://bookish-bliss.onrender.com/?token=${localStorage.getItem(
+            "token"
+          )}`
         );
 
         const data = await res.json();

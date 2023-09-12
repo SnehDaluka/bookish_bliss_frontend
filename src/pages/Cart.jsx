@@ -17,7 +17,7 @@ const Cart = (props) => {
       dispatch(reset());
       try {
         const res = await fetch(
-          `http://localhost:8000/cart/all?email=${localStorage.getItem(
+          `https://bookish-bliss.onrender.com/cart/all?email=${localStorage.getItem(
             "email"
           )}`,
           {
@@ -40,7 +40,7 @@ const Cart = (props) => {
     const callCartPage = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8000/cartitems?email=${localStorage.getItem(
+          `https://bookish-bliss.onrender.com/cartitems?email=${localStorage.getItem(
             "email"
           )}`
         );

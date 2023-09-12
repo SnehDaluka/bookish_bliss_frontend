@@ -15,7 +15,7 @@ const Books = (props) => {
 
   const callBooksPage1 = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/books`);
+      const res = await fetch(`https://bookish-bliss.onrender.com/books`);
 
       const data = await res.json();
       if (res.status === 200) {
@@ -29,7 +29,7 @@ const Books = (props) => {
   const callBooksPage2 = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8000/books/category/${category}`
+        `https://bookish-bliss.onrender.com/books/category/${category}`
       );
 
       const data = await res.json();
@@ -44,7 +44,9 @@ const Books = (props) => {
   const callBooksPage3 = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8000/books/search?name=${searchParams.get("name")}`
+        `https://bookish-bliss.onrender.com/books/search?name=${searchParams.get(
+          "name"
+        )}`
       );
 
       const data = await res.json();

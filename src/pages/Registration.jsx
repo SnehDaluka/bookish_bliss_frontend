@@ -32,13 +32,16 @@ const Registration = () => {
       setValid(false);
     } else {
       setLoad(true);
-      const register = await fetch("http://localhost:8000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...data }),
-      });
+      const register = await fetch(
+        "https://bookish-bliss.onrender.com/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...data }),
+        }
+      );
       const response = await register.json();
       setLoad(false);
       if (response.status === 201) {

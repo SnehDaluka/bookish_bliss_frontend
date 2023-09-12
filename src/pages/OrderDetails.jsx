@@ -8,7 +8,7 @@ const OrderDetails = () => {
     const callCartPage = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8000/cartitems?email=${localStorage.getItem(
+          `https://bookish-bliss.onrender.com/cartitems?email=${localStorage.getItem(
             "email"
           )}`
         );

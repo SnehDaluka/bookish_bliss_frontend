@@ -27,7 +27,7 @@ const Login = () => {
     try {
       e.preventDefault();
       setLoad(true);
-      const register = await fetch("http://localhost:8000/login", {
+      const register = await fetch("https://bookish-bliss.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const BooksCart = (props) => {
   const displayBook = async (book) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/bookname?name=${props.book.bookname}`
+        `https://bookish-bliss.onrender.com/bookname?name=${props.book.bookname}`
       );
       const data = await res.json();
       if (res.status === 200) {
@@ -34,7 +34,7 @@ const BooksCart = (props) => {
   const addQuantity = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8000/cart?name=${props.book.bookname}`,
+        `https://bookish-bliss.onrender.com/cart?name=${props.book.bookname}`,
         {
           method: "PATCH",
           headers: {
@@ -60,7 +60,7 @@ const BooksCart = (props) => {
   const subQuantity = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8000/cart?name=${props.book.bookname}`,
+        `https://bookish-bliss.onrender.com/cart?name=${props.book.bookname}`,
         {
           method: "PATCH",
           headers: {
@@ -86,7 +86,7 @@ const BooksCart = (props) => {
   const removeItem = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8000/cart?name=${props.book.bookname}`,
+        `https://bookish-bliss.onrender.com/cart?name=${props.book.bookname}`,
         {
           method: "DELETE",
         }

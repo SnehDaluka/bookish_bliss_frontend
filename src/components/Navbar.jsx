@@ -11,16 +11,19 @@ const Navbar = () => {
   const state = useSelector((state) => state.logging);
   const logOutUser = async () => {
     try {
-      const register = await fetch("http://localhost:8000/logout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: localStorage.getItem("email"),
-          token: localStorage.getItem("token"),
-        }),
-      });
+      const register = await fetch(
+        "https://bookish-bliss.onrender.com/logout",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: localStorage.getItem("email"),
+            token: localStorage.getItem("token"),
+          }),
+        }
+      );
       if (register.status === 200) {
         dispatch(logout());
         localStorage.removeItem("token");
@@ -40,7 +43,9 @@ const Navbar = () => {
     const callNavbar = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8000/?token=${localStorage.getItem("token")}`
+          `https://bookish-bliss.onrender.com/?token=${localStorage.getItem(
+            "token"
+          )}`
         );
         if (res.status === 200) {
           dispatch(login());

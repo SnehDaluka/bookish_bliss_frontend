@@ -24,13 +24,16 @@ const Contact = () => {
   const handlesubmit = async (e) => {
     e.preventDefault();
     setLoad(true);
-    const register = await fetch("http://localhost:8000/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...data }),
-    });
+    const register = await fetch(
+      "https://bookish-bliss.onrender.com/messages",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...data }),
+      }
+    );
     const response = await register.json();
     setLoad(false);
     if (register.status === 201) {
@@ -47,7 +50,9 @@ const Contact = () => {
   useEffect(() => {
     const callContactPage = async () => {
       const res = await fetch(
-        `http://localhost:8000/?token=${localStorage.getItem("token")}`
+        `https://bookish-bliss.onrender.com/?token=${localStorage.getItem(
+          "token"
+        )}`
       );
 
       const data1 = await res.json();

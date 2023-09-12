@@ -13,7 +13,7 @@ const Card = (props) => {
 
   const handleClick = async (e) => {
     try {
-      const res = await fetch(`http://localhost:8000/addtocart`, {
+      const res = await fetch(`https://bookish-bliss.onrender.com/addtocart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const Card = (props) => {
     const callCard = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8000/cart?name=${
+          `https://bookish-bliss.onrender.com/cart?name=${
             props.bookData.name
           }&email=${localStorage.getItem("email")}`
         );

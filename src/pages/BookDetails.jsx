@@ -13,7 +13,7 @@ const BookDetails = () => {
 
   const addToCart = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/addtocart`, {
+      const res = await fetch(`https://bookish-bliss.onrender.com/addtocart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const BookDetails = () => {
     const callCart = async (data) => {
       try {
         const res = await fetch(
-          `http://localhost:8000/cart?name=${
+          `https://bookish-bliss.onrender.com/cart?name=${
             data.name
           }&email=${localStorage.getItem("email")}`
         );
@@ -66,7 +66,9 @@ const BookDetails = () => {
     };
     const displayData = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/book/${id}`);
+        const res = await fetch(
+          `https://bookish-bliss.onrender.com/book/${id}`
+        );
         const data1 = await res.json();
         if (res.status === 200) {
           setData(data1[0]);
