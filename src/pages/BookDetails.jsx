@@ -27,7 +27,7 @@ const BookDetails = () => {
         setAddedToCart(true);
         dispatch(
           add({
-            price: props.bookData.sprice,
+            price: data.sprice,
             qty: 1,
           })
         );
